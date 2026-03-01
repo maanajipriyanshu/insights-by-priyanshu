@@ -17,16 +17,14 @@
       --bdr:   rgba(0,245,255,0.15);
       --glow:  0 0 16px rgba(0,245,255,0.4);
       --glow2: 0 0 16px rgba(123,47,255,0.45);
-      --r:     1rem;
-      --mono:  'Share Tech Mono', monospace;
-      --sans:  'Outfit', sans-serif;
+      --r: 1rem;
+      --mono: 'Share Tech Mono', monospace;
+      --sans: 'Outfit', sans-serif;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--sans); overflow-x: hidden; }
     a { color: var(--neon); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* grid bg */
     body::before {
       content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background-image: linear-gradient(rgba(0,245,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,255,0.025) 1px, transparent 1px);
@@ -63,7 +61,7 @@
     @keyframes pulse { 0%,100%{box-shadow:0 0 16px rgba(0,245,255,.4),0 0 40px rgba(0,245,255,.1)} 50%{box-shadow:0 0 32px rgba(0,245,255,.8),0 0 70px rgba(0,245,255,.25)} }
     .pw img { width:100%; height:100%; object-fit:cover; }
     .ht { max-width:560px; }
-    .htag { font-family:var(--mono); font-size:.8rem; color:var(--neon); letter-spacing:3px; margin-bottom:.5rem; opacity:0; animation:up .6s .2s forwards; }
+    .htag  { font-family:var(--mono); font-size:.8rem; color:var(--neon); letter-spacing:3px; margin-bottom:.5rem; opacity:0; animation:up .6s .2s forwards; }
     .hname { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; line-height:1.1; background:linear-gradient(120deg,#fff 0%,var(--neon) 55%,var(--neon2) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; opacity:0; animation:up .6s .4s forwards; }
     .hrole { font-family:var(--mono); font-size:1.15rem; color:var(--neon2); margin:.75rem 0 1.2rem; text-shadow:var(--glow2); opacity:0; animation:up .6s .6s forwards; }
     .blink { display:inline-block; border-right:2px solid var(--neon2); animation:bl .75s step-end infinite; }
@@ -123,10 +121,9 @@
     .ti { position:relative; margin-bottom:2rem; padding-left:1.5rem; }
     .td { position:absolute; left:-2.15rem; top:.35rem; width:12px; height:12px; border-radius:50%; background:var(--neon); border:2px solid var(--bg); box-shadow:0 0 8px var(--neon); transition:transform .3s,box-shadow .3s; }
     .td.edu { background:var(--neon2); box-shadow:0 0 8px var(--neon2); }
-    .ti:hover .td { transform:scale(1.4); }
+    .ti:hover .td { transform:scale(1.4); box-shadow:0 0 16px var(--neon); }
     .ti:hover .td.edu { box-shadow:0 0 16px var(--neon2); }
-    .ti:hover .td:not(.edu) { box-shadow:0 0 16px var(--neon); }
-    .tdate { font-family:var(--mono); font-size:.7rem; color:var(--neon2); letter-spacing:1px; margin-bottom:.2rem; }
+    .tdate  { font-family:var(--mono); font-size:.7rem; color:var(--neon2); letter-spacing:1px; margin-bottom:.2rem; }
     .ttitle { font-size:1rem; font-weight:700; color:#fff; margin-bottom:.15rem; }
     .torg   { font-size:.82rem; color:var(--neon); margin-bottom:.45rem; }
     .tdesc  { font-size:.8rem; color:var(--muted); line-height:1.65; }
@@ -135,7 +132,7 @@
     /* SKILLS */
     .skgrid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem 3rem; }
     @media(max-width:768px){.skgrid{grid-template-columns:1fr}}
-    .ktop { display:flex; justify-content:space-between; margin-bottom:.35rem; font-size:.87rem; }
+    .ktop  { display:flex; justify-content:space-between; margin-bottom:.35rem; font-size:.87rem; }
     .kname { color:var(--text); font-weight:600; }
     .kpct  { font-family:var(--mono); color:var(--neon); font-size:.8rem; }
     .ktrack { background:rgba(0,245,255,.07); border:1px solid var(--bdr); border-radius:999px; height:8px; overflow:hidden; }
@@ -167,17 +164,17 @@
     .lrow { display:flex; gap:1.2rem; flex-wrap:wrap; }
     .lc { background:var(--card); border:1px solid var(--bdr); border-radius:var(--r); padding:1.4rem 1.8rem; min-width:190px; flex:1; transition:border-color .3s,box-shadow .3s; }
     .lc:hover { border-color:var(--neon); box-shadow:var(--glow); }
-    .lflag { font-size:2rem; margin-bottom:.5rem; }
-    .lname { font-size:1rem; font-weight:700; color:#fff; margin-bottom:.2rem; }
-    .llvl  { font-family:var(--mono); font-size:.7rem; color:var(--neon); letter-spacing:1px; margin-bottom:.7rem; }
+    .lflag  { font-size:2rem; margin-bottom:.5rem; }
+    .lname  { font-size:1rem; font-weight:700; color:#fff; margin-bottom:.2rem; }
+    .llvl   { font-family:var(--mono); font-size:.7rem; color:var(--neon); letter-spacing:1px; margin-bottom:.7rem; }
     .ltrack { background:rgba(0,245,255,.07); border:1px solid var(--bdr); border-radius:999px; height:6px; overflow:hidden; }
     .lfill  { height:100%; width:0%; border-radius:999px; background:linear-gradient(90deg,var(--neon2),var(--neon)); box-shadow:0 0 6px var(--neon); transition:width 1.4s cubic-bezier(.4,0,.2,1); }
 
-    /* CERTIFICATIONS */
+    /* CERTS */
     .cgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.4rem; }
     .cc { background:var(--card); border:1px solid var(--bdr); border-radius:var(--r); padding:1.4rem; display:flex; gap:1rem; align-items:flex-start; transition:border-color .3s,box-shadow .3s; }
     .cc:hover { border-color:var(--neon2); box-shadow:var(--glow2); }
-    .cico { font-size:1.8rem; flex-shrink:0; }
+    .cico    { font-size:1.8rem; flex-shrink:0; }
     .ctitle  { font-size:.95rem; font-weight:700; color:#fff; margin-bottom:.2rem; }
     .cissuer { font-family:var(--mono); font-size:.7rem; color:var(--neon); margin-bottom:.5rem; letter-spacing:1px; }
     .cdesc   { font-size:.78rem; color:var(--muted); line-height:1.6; margin-bottom:.7rem; }
@@ -215,7 +212,7 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">PRIYANSHU SINGH</div>
+    <div class="logo">PRIYANSHU</div>
     <ul class="nl">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -233,26 +230,24 @@
       <p class="htag">// data_analyst.py</p>
       <h1 class="hname">Priyanshu Singh</h1>
       <p class="hrole"><span id="typed"></span><span class="blink">&nbsp;</span></p>
-      <p class="hdesc">Turning raw data into decisions. Experienced in Python, SQL &amp; Power BI — across global salary benchmarks, job markets, physics experiments &amp; enterprise data pipelines. Open to relocation globally.</p>
+      <p class="hdesc">Turning raw data into decisions. Experienced in Python, SQL &amp; Power BI — across global salary benchmarks, job markets, physics experiments &amp; enterprise data pipelines. Based in Gurugram, India.</p>
       <div class="hbtns">
         <button class="btn solid rw" onclick="window.open('./assets/Priyanshu_Singh_Data_Analyst_Resume.pdf')">Download Resume</button>
         <button class="btn rw" onclick="location.href='#contact'">Get In Touch</button>
       </div>
       <div class="socials">
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/maanapriyanshurajput/" target="_blank" class="sic" title="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <!-- GitHub -->
         <a href="https://github.com/maanajipriyanshu" target="_blank" class="sic" title="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
-        <!-- Instagram -->
         <a href="https://www.instagram.com/maanapriyanshurajput" target="_blank" class="sic ig" title="Instagram">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         </a>
-
-        <!-- Duolingo -->
+        <a href="https://www.hackerrank.com/certificates/7ea5191eedc7" target="_blank" class="sic hr" title="HackerRank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1.285 0 9.75 4.886 10.392 6 .645 1.115.645 10.885 0 12S13.287 24 12 24C10.715 24 2.25 19.114 1.608 18 .963 16.886.963 7.115 1.608 6 2.25 4.886 10.715 0 12 0zm2.205 6.6h-1.001c-.362 0-.454.084-.454.463v1.55H11.25V7.062c0-.378-.09-.462-.452-.462H9.795c-.362 0-.452.084-.452.462v9.875c0 .378.09.463.452.463h1.003c.36 0 .452-.085.452-.463v-3.77h1.5v3.77c0 .378.092.463.454.463h1.001c.362 0 .453-.085.453-.463V7.063c0-.378-.09-.463-.453-.463z"/></svg>
+        </a>
         <a href="https://www.duolingo.com/profile/priyanshu.rajput" target="_blank" class="sic duo" title="Duolingo">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 0h-15A4.51 4.51 0 0 0 0 4.5v15A4.51 4.51 0 0 0 4.5 24h15a4.51 4.51 0 0 0 4.5-4.5v-15A4.51 4.51 0 0 0 19.5 0zm-2.09 15.71a5.26 5.26 0 0 1-3.57 1.55 5.55 5.55 0 0 1-1.89-.31l-.63.87a.66.66 0 0 1-.54.28.69.69 0 0 1-.39-.12.65.65 0 0 1-.16-.91l.56-.77a5.32 5.32 0 0 1-1.93-2.94 5.24 5.24 0 0 1 .44-3.55 5.33 5.33 0 0 1 2.75-2.57 5.24 5.24 0 0 1 3.93.05 5.31 5.31 0 0 1 2.57 2.75 5.23 5.23 0 0 1-.14 4.67zm-3.72-5.96a2.09 2.09 0 1 0 0 4.18 2.09 2.09 0 0 0 0-4.18z"/></svg>
         </a>
@@ -279,22 +274,22 @@
     <h2 class="st fi d1">About Me</h2>
     <div class="sln fi d1"></div>
     <div class="ag">
-      <div class="aiw fi d2"><img src="./assets/me.jpeg"  /></div>
+      <div class="aiw fi d2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Chandigarh_University_seal.svg/300px-Chandigarh_University_seal.svg.png" alt="Chandigarh University" /></div>
       <div>
         <div class="acs fi d2">
           <div class="ac"><h3>Experience</h3><p>1+ Year<br/>Data Analysis</p></div>
           <div class="ac"><h3>Education</h3><p>B.C.A &amp; M.Sc.<br/>Data Science</p></div>
           <div class="ac"><h3>Scope</h3><p>Global Projects<br/>Multi-domain</p></div>
-          <div class="ac"><h3>Location</h3><p>Gurugram, India<br/>Open to Relocation</p></div>
+          <div class="ac"><h3>Location</h3><p>Gurugram, India</p></div>
         </div>
-        <p class="ap fi d3">I'm a Data Analyst with hands-on experience using Python, SQL, and Power BI to analyze complex datasets and surface actionable business insights. I've worked with healthcare and pharmaceutical sales data, built executive dashboards, conducted a large-scale analysis of 69,000+ Malaysian job postings across 26 industries, and explored high-energy physics event data using research-style workflows.<br/><br/>Currently pursuing M.Sc. in Data Science at Chandigarh University and actively seeking data analyst roles globally.</p>
+        <p class="ap fi d3">I'm a Data Analyst with hands-on experience using Python, SQL, and Power BI to analyze complex datasets and surface actionable business insights. I've worked with healthcare and pharmaceutical sales data, built executive dashboards, conducted a large-scale analysis of 69,000+ job postings across 26 industries, and explored high-energy physics event data using research-style workflows.<br/><br/>Currently pursuing M.Sc. in Data Science at Chandigarh University and actively seeking data analyst roles.</p>
       </div>
     </div>
   </section>
 
   <div class="arrow"><img src="./assets/ArrowDn.png" onclick="location.href='#experience'" /></div>
 
-  <!-- EXPERIENCE TIMELINE -->
+  <!-- EXPERIENCE -->
   <section id="experience">
     <p class="sl fi">// work_and_education</p>
     <h2 class="st fi d1">Experience &amp; Education</h2>
@@ -347,7 +342,7 @@
           <div class="ti fi d3">
             <div class="td edu"></div>
             <div class="tdate">2020 – 2023</div>
-            <div class="ttitle">B.C.A (Bachelor of Computer Applications)</div>
+            <div class="ttitle">B.C.A</div>
             <div class="torg">L.N. Mishra College of Business Management</div>
             <div class="tdesc">Foundation in computer science, programming and business applications.</div>
           </div>
@@ -384,116 +379,31 @@
     <div class="sln fi d1"></div>
     <p class="fi d2" style="color:var(--muted);font-size:.78rem;font-family:var(--mono);margin-bottom:2rem;">// hover a card to flip and see details</p>
     <div class="pgrid">
+      <div class="flip fi d2"><div class="flin">
+        <div class="ff"><img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600&q=80" alt="HEP" /><div class="ffb"><h2>High-Energy Physics Data Analysis</h2><p>Particle collision events · Statistical analysis · Reproducible workflow</p><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Jupyter</span><p class="hint">[ hover to flip ]</p></div></div>
+        <div class="fb"><h2>High-Energy Physics Data Analysis</h2><ul><li>Analyzed synthetic particle collision data mimicking real detector output</li><li>Cleaned unphysical values, missing measurements &amp; detector noise</li><li>Computed momentum magnitude &amp; applied physics-motivated selection</li><li>Simulated detector resolution effects on energy measurements</li><li>Full reproducible Jupyter notebook with fixed random seeds</li></ul><div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/hep-data-analysis','_blank')">GitHub</button></div></div>
+      </div></div>
 
-      <!-- HEP -->
-      <div class="flip fi d2">
-        <div class="flin">
-          <div class="ff">
-            <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600&q=80" alt="HEP" />
-            <div class="ffb">
-              <h2>High-Energy Physics Data Analysis</h2>
-              <p>Particle collision events · Statistical analysis · Reproducible workflow</p>
-              <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Jupyter</span>
-              <p class="hint">[ hover to flip ]</p>
-            </div>
-          </div>
-          <div class="fb">
-            <h2>High-Energy Physics Data Analysis</h2>
-            <ul>
-              <li>Analyzed synthetic particle collision data mimicking real detector output</li>
-              <li>Cleaned unphysical values, missing measurements &amp; detector noise</li>
-              <li>Computed momentum magnitude &amp; applied physics-motivated selection criteria</li>
-              <li>Simulated detector resolution effects on energy measurements</li>
-              <li>Compared distributions across particle types with clear visualizations</li>
-              <li>Full reproducible Jupyter notebook with fixed random seeds</li>
-            </ul>
-            <div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/hep-data-analysis','_blank')">GitHub</button></div>
-          </div>
-        </div>
-      </div>
+      <div class="flip fi d2"><div class="flin">
+        <div class="ff"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Malaysia" /><div class="ffb"><h2>Malaysia Job Market Analysis 2024</h2><p>69,024 job postings · 26 industries · Salary benchmarks</p><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Regex</span><p class="hint">[ hover to flip ]</p></div></div>
+        <div class="fb"><h2>Malaysia Job Market Analysis 2024</h2><ul><li>Analyzed 69,024 JobStreet postings across 26 industries</li><li>Extracted salary data using Regex across 31,594 records</li><li>Found Penang pays 32% more than KL (RM 7,216 vs RM 5,468/month)</li><li>SQL CTEs &amp; RANK() to rank industries by salary &amp; demand</li><li>Interactive Power BI dashboard with KPI cards &amp; slicers</li></ul><div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/malaysia-job-market-analysis','_blank')">GitHub</button></div></div>
+      </div></div>
 
-      <!-- Malaysia -->
-      <div class="flip fi d2">
-        <div class="flin">
-          <div class="ff">
-            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Malaysia" />
-            <div class="ffb">
-              <h2>Malaysia Job Market Analysis 2024</h2>
-              <p>69,024 job postings · 26 industries · Salary benchmarks</p>
-              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Regex</span>
-              <p class="hint">[ hover to flip ]</p>
-            </div>
-          </div>
-          <div class="fb">
-            <h2>Malaysia Job Market Analysis 2024</h2>
-            <ul>
-              <li>Analyzed 69,024 JobStreet Malaysia postings across 26 industries</li>
-              <li>Extracted salary data from unstructured text using Regex (31,594 records)</li>
-              <li>Found Penang pays 32% more than KL (RM 7,216 vs RM 5,468/month)</li>
-              <li>Used SQL CTEs &amp; RANK() to rank industries by salary &amp; demand</li>
-              <li>Built interactive Power BI dashboard with KPI cards &amp; slicers</li>
-            </ul>
-            <div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/malaysia-job-market-analysis','_blank')">GitHub</button></div>
-          </div>
-        </div>
-      </div>
+      <div class="flip fi d3"><div class="flin">
+        <div class="ff"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Global Salary" /><div class="ffb"><h2>Global Data Salary Insights</h2><p>Global salary trends · Data roles · Remote work impact</p><span class="tag">Python</span><span class="tag">BigQuery</span><span class="tag">Power BI</span><span class="tag">EDA</span><p class="hint">[ hover to flip ]</p></div></div>
+        <div class="fb"><h2>Global Data Salary Insights</h2><ul><li>Analyzed global salary trends across data roles internationally</li><li>BigQuery CTEs &amp; window functions to identify hiring hotspots</li><li>Experience-level salary growth &amp; remote work impact via EDA</li><li>Interactive Power BI dashboard with global compensation benchmarks</li></ul><div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/global-data-salary-insights','_blank')">GitHub</button></div></div>
+      </div></div>
 
-      <!-- Global Salary -->
-      <div class="flip fi d3">
-        <div class="flin">
-          <div class="ff">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Global Salary" />
-            <div class="ffb">
-              <h2>Global Data Salary Insights</h2>
-              <p>Global salary trends · Data roles · Remote work impact</p>
-              <span class="tag">Python</span><span class="tag">BigQuery</span><span class="tag">Power BI</span><span class="tag">EDA</span>
-              <p class="hint">[ hover to flip ]</p>
-            </div>
-          </div>
-          <div class="fb">
-            <h2>Global Data Salary Insights</h2>
-            <ul>
-              <li>Analyzed global salary trends across data roles using international dataset</li>
-              <li>Used BigQuery CTEs &amp; window functions to identify hiring hotspots</li>
-              <li>Identified experience-level salary growth &amp; remote work impact via EDA</li>
-              <li>Built interactive Power BI dashboard with global compensation benchmarks</li>
-            </ul>
-            <div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/global-data-salary-insights','_blank')">GitHub</button></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pipeline -->
-      <div class="flip fi d3">
-        <div class="flin">
-          <div class="ff">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Pipeline" />
-            <div class="ffb">
-              <h2>Large-Scale Data Validation Pipeline</h2>
-              <p>1M+ records · Cleaning &amp; validation · Reproducible workflow</p>
-              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Jupyter</span><span class="tag">Pandas</span>
-              <p class="hint">[ hover to flip ]</p>
-            </div>
-          </div>
-          <div class="fb">
-            <h2>Large-Scale Data Validation Pipeline</h2>
-            <ul>
-              <li>Built a cleaning pipeline for a dataset with over 1 million records</li>
-              <li>Defined validation rules: duplicates, missing values &amp; invalid data</li>
-              <li>Automated detection of referential integrity &amp; format inconsistencies</li>
-              <li>Documented full workflow in a reproducible Jupyter notebook</li>
-            </ul>
-            <div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/large-scale-data-validation','_blank')">GitHub</button></div>
-          </div>
-        </div>
-      </div>
-
+      <div class="flip fi d3"><div class="flin">
+        <div class="ff"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Pipeline" /><div class="ffb"><h2>Large-Scale Data Validation Pipeline</h2><p>1M+ records · Cleaning &amp; validation · Reproducible workflow</p><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Jupyter</span><span class="tag">Pandas</span><p class="hint">[ hover to flip ]</p></div></div>
+        <div class="fb"><h2>Large-Scale Data Validation Pipeline</h2><ul><li>Built a cleaning pipeline for a dataset with over 1 million records</li><li>Validation rules: duplicates, missing values &amp; invalid data</li><li>Automated referential integrity &amp; format inconsistency detection</li><li>Full reproducible Jupyter notebook workflow</li></ul><div class="fbb"><button class="bsm rw" onclick="window.open('https://github.com/maanajipriyanshu/large-scale-data-validation','_blank')">GitHub</button></div></div>
+      </div></div>
     </div>
   </section>
 
   <div class="arrow"><img src="./assets/ArrowDn.png" onclick="location.href='#extras'" /></div>
 
-  <!-- LANGUAGES + CERTIFICATIONS -->
+  <!-- EXTRAS -->
   <section id="extras">
     <p class="sl fi">// languages</p>
     <h2 class="st fi d1">Languages</h2>
@@ -508,42 +418,10 @@
     <h2 class="st fi d1">Certifications</h2>
     <div class="sln fi d1"></div>
     <div class="cgrid fi d2">
-      <div class="cc">
-        <div class="cico">🏅</div>
-        <div>
-          <div class="ctitle">IBM Data Science</div>
-          <div class="cissuer">Coursera · IBM</div>
-          <div class="cdesc">Comprehensive data science program covering Python, SQL, data visualization and machine learning fundamentals.</div>
-          <a class="clink" href="https://www.coursera.org/account/accomplishments/specialization/certificate/XAWCZK8N8Z53" target="_blank">View Certificate ↗</a>
-        </div>
-      </div>
-      <div class="cc">
-        <div class="cico">🏅</div>
-        <div>
-          <div class="ctitle">Career Essentials in Data Analysis</div>
-          <div class="cissuer">Microsoft + LinkedIn</div>
-          <div class="cdesc">Industry-aligned certification covering data storytelling, Excel and core analytics workflows.</div>
-          <a class="clink" href="https://www.linkedin.com/learning/certificates/333623ddef7012aac2d9ade4875e734cd132c4b96c10c72c2284edaed59dba75?trk=share_certificate" target="_blank">View Certificate ↗</a>
-        </div>
-      </div>
-      <div class="cc">
-        <div class="cico">🏅</div>
-        <div>
-          <div class="ctitle">Journey into Data Science with Python</div>
-          <div class="cissuer">CodeSignal</div>
-          <div class="cdesc">Hands-on Python data science track covering Pandas, NumPy, data wrangling and exploratory analysis.</div>
-          <a class="clink" href="https://codesignal.com/learn/certificates/cmb6xh6kz001ui804alk68x5o/course-paths/4" target="_blank">View Certificate ↗</a>
-        </div>
-      </div>
-      <div class="cc">
-        <div class="cico">🏅</div>
-        <div>
-          <div class="ctitle">SQL (Intermediate)</div>
-          <div class="cissuer">HackerRank</div>
-          <div class="cdesc">Verified SQL proficiency covering complex queries, joins, subqueries and aggregations.</div>
-          <a class="clink" href="https://www.hackerrank.com/certificates/7ea5191eedc7" target="_blank">View Certificate ↗</a>
-        </div>
-      </div>
+      <div class="cc"><div class="cico">🏅</div><div><div class="ctitle">IBM Data Science</div><div class="cissuer">Coursera · IBM</div><div class="cdesc">Comprehensive data science program covering Python, SQL, data visualization and machine learning fundamentals.</div><a class="clink" href="https://www.coursera.org/account/accomplishments/specialization/certificate/XAWCZK8N8Z53" target="_blank">View Certificate ↗</a></div></div>
+      <div class="cc"><div class="cico">🏅</div><div><div class="ctitle">Career Essentials in Data Analysis</div><div class="cissuer">Microsoft + LinkedIn</div><div class="cdesc">Industry-aligned certification covering data storytelling, Excel and core analytics workflows.</div><a class="clink" href="https://www.linkedin.com/learning/certificates/333623ddef7012aac2d9ade4875e734cd132c4b96c10c72c2284edaed59dba75?trk=share_certificate" target="_blank">View Certificate ↗</a></div></div>
+      <div class="cc"><div class="cico">🏅</div><div><div class="ctitle">Journey into Data Science with Python</div><div class="cissuer">CodeSignal</div><div class="cdesc">Hands-on Python data science track covering Pandas, NumPy, data wrangling and exploratory analysis.</div><a class="clink" href="https://codesignal.com/learn/certificates/cmb6xh6kz001ui804alk68x5o/course-paths/4" target="_blank">View Certificate ↗</a></div></div>
+      <div class="cc"><div class="cico">🏅</div><div><div class="ctitle">SQL (Intermediate)</div><div class="cissuer">HackerRank</div><div class="cdesc">Verified SQL proficiency covering complex queries, joins, subqueries and aggregations.</div><a class="clink" href="https://www.hackerrank.com/certificates/7ea5191eedc7" target="_blank">View Certificate ↗</a></div></div>
     </div>
   </section>
 
@@ -572,14 +450,12 @@
   <script>
   (function(){
     // CURSOR
-    var cd=document.getElementById('cd'), cr=document.getElementById('cr');
+    var cd=document.getElementById('cd'),cr=document.getElementById('cr');
     document.addEventListener('mousemove',function(e){
       cd.style.left=e.clientX+'px'; cd.style.top=e.clientY+'px';
       cr.style.left=e.clientX+'px'; cr.style.top=e.clientY+'px';
       var t=document.createElement('div'); t.className='tr';
-      t.style.left=e.clientX+'px'; t.style.top=e.clientY+'px';
-      t.style.width=t.style.height='7px';
-      t.style.background=Math.random()>.5?'rgba(0,245,255,.5)':'rgba(123,47,255,.5)';
+      t.style.cssText='left:'+e.clientX+'px;top:'+e.clientY+'px;width:7px;height:7px;background:'+(Math.random()>.5?'rgba(0,245,255,.5)':'rgba(123,47,255,.5)');
       document.body.appendChild(t); setTimeout(function(){t.remove();},560);
     });
 
@@ -587,16 +463,14 @@
     document.querySelectorAll('.rw').forEach(function(b){
       b.addEventListener('click',function(e){
         var r=document.createElement('span'); r.className='rf';
-        var rect=b.getBoundingClientRect(), sz=Math.max(rect.width,rect.height);
-        r.style.width=r.style.height=sz+'px';
-        r.style.left=(e.clientX-rect.left-sz/2)+'px';
-        r.style.top=(e.clientY-rect.top-sz/2)+'px';
+        var rc=b.getBoundingClientRect(),sz=Math.max(rc.width,rc.height);
+        r.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+(e.clientX-rc.left-sz/2)+'px;top:'+(e.clientY-rc.top-sz/2)+'px';
         b.appendChild(r); setTimeout(function(){r.remove();},560);
       });
     });
 
     // PARTICLES
-    var cv=document.getElementById('cv'), ctx=cv.getContext('2d'), W,H,pts=[];
+    var cv=document.getElementById('cv'),ctx=cv.getContext('2d'),W,H,pts=[];
     function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
     resize(); window.addEventListener('resize',resize);
     function mk(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42,r:Math.random()*1.7+.4,a:Math.random()*.42+.1,c:Math.random()>.5?'0,245,255':'123,47,255'};}
@@ -637,27 +511,27 @@
     var fo=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on');});},{threshold:.1});
     document.querySelectorAll('.fi').forEach(function(el){fo.observe(el);});
 
-    // SKILL + LANG BARS
+    // BARS
     var bo=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.width=x.target.getAttribute('data-w')+'%';bo.unobserve(x.target);}});},{threshold:.25});
     document.querySelectorAll('.kfill,.lfill').forEach(function(b){bo.observe(b);});
 
-    // STATS COUNTER
+    // STATS
     function animCount(el){
-      var display=el.getAttribute('data-display');
-      if(display){el.textContent=display;return;}
+      var disp=el.getAttribute('data-display');
+      if(disp){el.textContent=disp;return;}
       var target=parseInt(el.getAttribute('data-target')),suffix=el.getAttribute('data-suffix')||'',steps=60,step=0;
-      var timer=setInterval(function(){
+      var t=setInterval(function(){
         step++;var ease=1-Math.pow(1-step/steps,3),cur=Math.floor(ease*target);
         el.textContent=(target>=10000?(cur/1000).toFixed(0)+'K':cur)+suffix;
-        if(step>=steps){el.textContent=(target>=10000?(target/1000).toFixed(0)+'K':target)+suffix;clearInterval(timer);}
+        if(step>=steps){el.textContent=(target>=10000?(target/1000).toFixed(0)+'K':target)+suffix;clearInterval(t);}
       },2000/steps);
     }
     var so=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){animCount(x.target);so.unobserve(x.target);}});},{threshold:.5});
     document.querySelectorAll('.sn').forEach(function(el){so.observe(el);});
 
-    // TILT (does not break flip)
+    // TILT
     document.querySelectorAll('.flip').forEach(function(fl){
-      var inn=fl.querySelector('.flin'), hov=false;
+      var inn=fl.querySelector('.flin'),hov=false;
       fl.addEventListener('mouseenter',function(){hov=true;});
       fl.addEventListener('mouseleave',function(){
         hov=false;
@@ -667,13 +541,12 @@
       });
       fl.addEventListener('mousemove',function(e){
         if(!hov)return;
-        var rect=fl.getBoundingClientRect();
-        var dx=(e.clientX-rect.left-rect.width/2)/(rect.width/2);
-        var dy=(e.clientY-rect.top-rect.height/2)/(rect.height/2);
+        var rc=fl.getBoundingClientRect();
+        var dx=(e.clientX-rc.left-rc.width/2)/(rc.width/2);
+        var dy=(e.clientY-rc.top-rc.height/2)/(rc.height/2);
         inn.style.transform='rotateX('+(-dy*5)+'deg) rotateY('+(dx*5)+'deg)';
       });
     });
-
   })();
   </script>
 </body>
